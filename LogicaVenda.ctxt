@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Custo\ getSeguro()
+comment1.params=taxa
+comment1.target=void\ setSeguro(Custo)
+comment2.params=venda
+comment2.target=double\ calcularTotal(Venda)
+numComments=3

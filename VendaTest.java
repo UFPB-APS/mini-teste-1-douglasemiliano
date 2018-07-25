@@ -60,7 +60,7 @@ public class VendaTest
         itemVend2.setQuantidade(1);
         venda1.addNoCarrinho(itemVend2, 1);
 
-        assertEquals(2625, logica.calcularTotal(venda1), 0.1);
+        assertEquals(2500, logica.calcularTotal(venda1), 0.1);
     }
 
     @Test
@@ -73,12 +73,12 @@ public class VendaTest
         itemVend1.setQuantidade(100);
         venda1.addNoCarrinho(itemVend1, 0);
 
-        Seguro seguro1 = new Seguro("Porto Seguro", 0.02);
-        logica.setSeguro(seguro1);
+        Custo custo1 = new CustoValorTotal("Porto Seguro", 0.02);
+        custo1.calcularCusto(venda1);
         assertEquals(10.71, logica.calcularTotal(venda1), 0.1);
 
-        Seguro seguro2 = new Seguro("Mapfre", 0.015);
-        logica.setSeguro(seguro2);
+        Custo custo2 = new CustoValorTotal("Mapfre", 0.015);
+        custo2.calcularCusto(venda1);
         assertEquals(10.66, logica.calcularTotal(venda1), 0.1);
     }
 
